@@ -1,4 +1,4 @@
 provider "aws" {
   region  = "us-east-1"
-  profile = "terraform-user"   # Added this line
+  #profile = "terraform-user"   # Added this line
 }
