@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: reddit-clone-service
+spec:
+  selector:
+    app: reddit-clone
+  type: ClusterIP  # Changed from LoadBalancer to save cost & work with Ingress
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000

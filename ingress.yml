@@ -1,0 +1,17 @@
+# Modified Reddit-Project/ingress.yml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-reddit-app
+spec:
+  rules:
+  - host: "reddit.urtechmitra.link" # Update to your domain
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/" # Changed from /test for direct root access
+        backend:
+          service:
+            name: reddit-clone-service
+            port:
+              number: 3000
